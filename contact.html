@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <body>
+    <header>
+        <h1>Contacta con Nosotros</h1>
+        <p><em>Por Germán García Abril</em></p>
+    </header>
+    <nav>
+        <a href="index.html">Inteligencia Artificial</a>
+        <a href="content.html">Mayores empresas de IA</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <form>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" placeholder="Tu name" required minlength="2" maxlength="50" pattern="[A-Za-z]+">
+        <br>
+        <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        <br>
+        <br>            
+            <label for="years">Años de uso de tecnología:</label>
+            <input type="number" id="years" name="years" min="0" max="100">
+        <br>
+        <br>
+            <label for="url">Página científica de IA preferida:</label>
+            <input type="url" id="url" name="url">
+        <br>
+        <br>
+            <label for="date">Cuándo conociste la IA:</label>
+            <input type="date" id="date" name="date">
+        <br>
+        <br>
+            <label for="nivel">Nivel de conocimiento:</label>
+            <input type="range" id="nivel" name="nivel" min="0" max="10">
+        <br>
+        <br>
+            <label for="color">Color representativo de la IA:</label>
+            <input type="color" id="color" name="color">
+        <br>
+        <br>
+            <label for="archivo">Subir imagen:</label>
+            <input type="file" id="archivo" name="archivo" accept=".jpg,.png">
+        <br>
+        <br>
+            <label for="opinion">Qué opinas de la IA:</label>
+        <br>
+            <textarea id="opinion" name="opinion" rows="4" cols="50"></textarea>
+        </fieldset>
+    <br>
+        <fieldset>
+            <legend>Opinión</legend>
+            <p>¿Qué opinas de la IA?</p>
+            <input type="radio" id="muyPositiva" name="opinionIA" value="Muy positiva">
+            <label for="muyPositiva">Muy positiva</label>
+        <br>
+            <input type="radio" id="neutral" name="opinionIA" value="Neutra">
+            <label for="neutral">Neutra</label>
+        <br>
+            <input type="radio" id="negative" name="opinionIA" value="negative">
+            <label for="negative">Negativo</label>
+        <br>
+        <br>
+            <p>¿Qué áreas crees que mejorará?</p>
+            <input type="checkbox" id="medicina" name="areas" value="medicina">
+            <label for="medicina">Medicina</label>
+        <br>
+            <input type="checkbox" id="education" name="areas" value="education">
+            <label for="education">Educación</label>
+        <br>
+            <input type="checkbox" id="transport" name="areas" value="transport">
+            <label for="transport">Transporte</label>
+        <br>
+        <br>        
+            <label for="technology">¿Cuál tecnología te interesa?</label>
+            <select id="technology" name="technology">
+                <option value="ML">Machine Learning</option>
+                <option value="DL">Deep Learning</option>
+                <option value="VA">Visión Artificial</option>
+                <option value="PLN">Procesamiento del Lenguaje Natural</option>
+            </select>
+        </fieldset>
+    <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetear">
+    </form>
+</body>
+</body>
+</html>

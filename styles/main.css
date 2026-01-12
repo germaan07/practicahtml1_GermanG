@@ -1,0 +1,64 @@
+    header{
+        background-color: black;
+        text-align: center;
+        color: aliceblue;
+        padding: 10px; 
+    }
+    nav{
+        background-color: #333;
+        text-align: center;
+        color: aliceblue;
+    }
+    nav a{
+        padding: 14px;
+        color: aliceblue;
+    }
+    nav a:hover{
+        background-color: #111;
+    }
+    p{
+        font-family: 'Courier New', Courier, monospace ;
+    }
+    #IACapacitive li{
+            font-style: italic;
+        }
+    div.flex-container{
+        display: flex;
+        flex-direction: row;
+    }
+    div.imagecenter{
+        background: linear-gradient(to bottom, #2435b3, #2b49c9c7, #3161d8);
+        display: block;
+        text-align: center;
+    }
+    table{
+        border-spacing: 0 10px;
+        border-radius: 10px;
+        width:100% ;
+        border-collapse: collapse;
+        border-color: aliceblue;
+        background-color: #436dac;
+        text-align: center;
+      }
+    td, th{
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    td.name{
+        font-style:italic;
+      }
+    p{
+       font-family: 'Courier New', Courier, monospace ;
+    }
+    #IACapacitive li{
+        font-style: italic;
+    }
+    div.flex-container{
+        display: flex;
+        flex-direction: row;
+    }
+    div.imagecenter{
+        background: linear-gradient(to bottom, #2435b3, #2b49c9c7, #3161d8);
+        display: block;           
+        text-align: center;
+    }
