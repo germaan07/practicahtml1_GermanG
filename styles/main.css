@@ -19,6 +19,17 @@
     p{
         font-family: 'Courier New', Courier, monospace ;
     }
+    #section1{
+        text-align: left;
+        border-left: 10px solid;
+        /*border-top-style: transparent;*/
+        border-radius: 10px;
+        border-left-color: brown;
+        /*border-image: linear-gradient(to right,brown, aliceblue, aliceblue) 1;*/
+    }
+    #section1 li{
+        margin-left: 25px;
+    }
     #IACapacitive li{
             font-style: italic;
         }
