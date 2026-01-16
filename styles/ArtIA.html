@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art-IA</title>
+    <style>
+        .chatgpt-art {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at center, #0f3d2e, #081c15);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Halo exterior (pensamiento / expansión) */
+.halo {
+  position: absolute;
+  inset: -40px;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(0, 255, 170, 0.15),
+    transparent
+  );
+  animation: spin 12s linear infinite;
+}
+
+/* Núcleo central (IA) */
+.core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #7fffd4, #00c896);
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px rgba(0, 255, 170, 0.6),
+    0 0 60px rgba(0, 255, 170, 0.4);
+}
+
+/* Anillo de datos */
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border: 2px dashed rgba(127, 255, 212, 0.5);
+  border-radius: 50%;
+  animation: spin-reverse 20s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+    #claude {
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .canvas {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: #0f1419;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        /* Círculo principal - representa la base de conocimiento */
+        .core-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+            box-shadow: 0 0 60px rgba(217, 119, 6, 0.4);
+        }
+
+        /* Anillos orbitales - representan el procesamiento y análisis */
+        .orbit-ring {
+            position: absolute;
+            border: 2px solid rgba(217, 119, 6, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .orbit-ring:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            animation-duration: 15s;
+        }
+
+        .orbit-ring:nth-child(3) {
+            width: 320px;
+            height: 320px;
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        /* Puntos de conexión - representan las ideas y respuestas */
+        .connection-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #f59e0b;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+        }
+
+        .point-1 {
+            top: 20%;
+            left: 30%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .point-2 {
+            top: 70%;
+            left: 20%;
+            animation: float 4s ease-in-out infinite 0.5s;
+        }
+
+        .point-3 {
+            top: 25%;
+            right: 25%;
+            animation: float 3.5s ease-in-out infinite 1s;
+        }
+
+        .point-4 {
+            bottom: 25%;
+            right: 20%;
+            animation: float 4.2s ease-in-out infinite 1.5s;
+        }
+
+        /* Líneas de pensamiento */
+        .thought-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.5), transparent);
+            transform-origin: left center;
+        }
+
+        .line-1 {
+            width: 150px;
+            top: 20%;
+            left: 31%;
+            transform: rotate(45deg);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .line-2 {
+            width: 120px;
+            top: 70%;
+            left: 21%;
+            transform: rotate(-30deg);
+            animation: shimmer 3s ease-in-out infinite 1s;
+        }
+
+        /* Partículas flotantes - representan creatividad */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(251, 191, 36, 0.6);
+            border-radius: 50%;
+        }
+
+        .particle:nth-child(9) {
+            top: 15%;
+            left: 50%;
+            animation: drift 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(10) {
+            top: 80%;
+            left: 45%;
+            animation: drift 7s ease-in-out infinite 1s;
+        }
+
+        .particle:nth-child(11) {
+            top: 40%;
+            left: 15%;
+            animation: drift 5s ease-in-out infinite 2s;
+        }
+
+        .particle:nth-child(12) {
+            top: 60%;
+            right: 15%;
+            animation: drift 6.5s ease-in-out infinite 0.5s;
+        }
+
+        /* Brillo central */
+        .glow {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        .label {
+            color: #f59e0b;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes drift {
+            0%, 100% { 
+                transform: translate(0, 0);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translate(20px, -20px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arte Generado por IA</h1>
+        
+    </header>
+    <br><br>
+    <section>
+        <div class="chatgpt-art">
+            <div class="halo"></div>
+            <div class="core"></div>
+            <div class="ring"></div>
+        </div>
+
+        <div id="Claude">
+             <div class="container">
+             <div class="canvas">
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="glow"></div>
+                <div class="core-circle"></div>
+                <div class="connection-point point-1"></div>
+                <div class="connection-point point-2"></div>
+                <div class="connection-point point-3"></div>
+                <div class="connection-point point-4"></div>
+                <div class="thought-line line-1"></div>
+                <div class="thought-line line-2"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="label">CLAUDE</div>
+            </div>
+        </div>
+       
+    </section>
+</body>
+</html>

@@ -1,11 +1,11 @@
     header{
-        background-color: black;
+        background: black;
         text-align: center;
         color: aliceblue;
         padding: 10px; 
     }
     nav{
-        background-color: #333;
+        background-color: #fafafa36;
         text-align: center;
         color: aliceblue;
     }
@@ -14,22 +14,67 @@
         color: aliceblue;
     }
     nav a:hover{
-        background-color: #111;
+        background-color: aliceblue;
+        color: black;
+        border: 3px solid black;
+        border-radius: 100px;
+    
     }
     p{
         font-family: 'Courier New', Courier, monospace ;
     }
-    #section1{
-        text-align: left;
-        border-left: 10px solid;
-        /*border-top-style: transparent;*/
-        border-radius: 10px;
-        border-left-color: brown;
-        /*border-image: linear-gradient(to right,brown, aliceblue, aliceblue) 1;*/
-    }
-    #section1 li{
-        margin-left: 25px;
-    }
+   #section1 {
+    position: relative;
+    text-align: left;
+    padding: 0.5rem 0.5rem 1.5rem 1rem;
+    border-left: 10px solid burlywood;
+    border-radius: 10px;
+}
+
+/* EXTENSIÓN SUPERIOR E INFERIOR CON RAMPA */
+#section1::before,
+#section1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    width: 260px;      /* longitud hacia la derecha */
+    border-top-width: 360px;
+    height: 10px;      /* altura máxima */
+
+    background: burlywood;
+
+    /* rampa descendente */
+    clip-path: polygon(
+        0 0,
+        95% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* arriba */
+#section1::before {
+    top: 0;
+    
+}
+
+/* abajo (rampa invertida) */
+#section1::after {
+    bottom: 0;
+    clip-path: polygon(
+        0 100%,
+        65% 70%,
+        70% 0,
+        0 0
+    );
+}
+
+#section1 li {
+    margin-left: 25px;
+}
+
+
     #IACapacitive li{
             font-style: italic;
         }
