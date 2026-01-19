@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -15,87 +15,122 @@
             <a href="content.html">Mayores empresas de IA</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <br><br>
     </header>
     
-    <section>
-    <form>
-        <fieldset>
-            <legend>Datos personales</legend>
-            <label for="name">name:</label>
-            <input type="text" id="name" name="name" placeholder="Tu name" required minlength="2" maxlength="50" pattern="[A-Za-z]+">
-        <br>
-        <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        <br>
-        <br>            
-            <label for="years">Años de uso de tecnología:</label>
-            <input type="number" id="years" name="years" min="0" max="100">
-        <br>
-        <br>
-            <label for="url">Página científica de IA preferida:</label>
-            <input type="url" id="url" name="url">
-        <br>
-        <br>
-            <label for="date">Cuándo conociste la IA:</label>
-            <input type="date" id="date" name="date">
-        <br>
-        <br>
-            <label for="nivel">Nivel de conocimiento:</label>
-            <input type="range" id="nivel" name="nivel" min="0" max="10">
-        <br>
-        <br>
-            <label for="color">Color representativo de la IA:</label>
-            <input type="color" id="color" name="color">
-        <br>
-        <br>
-            <label for="archivo">Subir imagen:</label>
-            <input type="file" id="archivo" name="archivo" accept=".jpg,.png">
-        <br>
-        <br>
-            <label for="opinion">Qué opinas de la IA:</label>
-        <br>
-            <textarea id="opinion" name="opinion" rows="4" cols="50"></textarea>
-        </fieldset>
-    <br>
-        <fieldset>
-            <legend>Opinión</legend>
-            <p>¿Qué opinas de la IA?</p>
-            <input type="radio" id="muyPositiva" name="opinionIA" value="Muy positiva">
-            <label for="muyPositiva">Muy positiva</label>
-        <br>
-            <input type="radio" id="neutral" name="opinionIA" value="Neutra">
-            <label for="neutral">Neutra</label>
-        <br>
-            <input type="radio" id="negative" name="opinionIA" value="negative">
-            <label for="negative">Negativo</label>
-        <br>
-        <br>
-            <p>¿Qué áreas crees que mejorará?</p>
-            <input type="checkbox" id="medicina" name="areas" value="medicina">
-            <label for="medicina">Medicina</label>
-        <br>
-            <input type="checkbox" id="education" name="areas" value="education">
-            <label for="education">Educación</label>
-        <br>
-            <input type="checkbox" id="transport" name="areas" value="transport">
-            <label for="transport">Transporte</label>
-        <br>
-        <br>        
-            <label for="technology">¿Cuál tecnología te interesa?</label>
-            <select id="technology" name="technology">
-                <option value="ML">Machine Learning</option>
-                <option value="DL">Deep Learning</option>
-                <option value="VA">Visión Artificial</option>
-                <option value="PLN">Procesamiento del Lenguaje Natural</option>
-            </select>
-        </fieldset>
-    <br>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Resetear">
-    </form>
-</section>
+    <main class="formulario-principal">
+        <section>
+            <form>
+                <fieldset class="grupo-datos-personales">
+                    <legend>Datos personales</legend>
+                    
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required minlength="2" maxlength="50" pattern="[A-Za-z]+">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="campo-formulario">
+                        <label for="years">Años de uso de tecnología:</label>
+                        <input type="number" id="years" name="years" min="0" max="100">
+                    </div>
+                
+                    <div class="campo-formulario">
+                        <label for="url">Página científica de IA preferida:</label>
+                        <input type="url" id="url" name="url">
+                    </div>
+                
+                    <div class="campo-formulario">
+                        <label for="date">Cuándo te interesaste por la IA:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                
+                    <div class="campo-formulario">
+                            <label for="nivel">Nivel de conocimiento:</label>
+                            <input type="range" id="nivel" name="nivel" min="0" max="10" value="5">
+                            <output for="nivel">5</output>
+                        </div>
+                
+                    <div class="campo-formulario">
+                            <label for="color">Color representativo de la IA:</label>
+                            <input type="color" id="color" name="color">
+                    </div>
+
+                    <div class="campo-formulario">
+                            <label for="archivo">Subir imagen:</label>
+                            <input type="file" id="archivo" name="archivo" accept=".jpg,.png,.pdf">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="opinion">Qué opinas de la IA:</label>
+                        <textarea id="opinion" name="opinion" rows="4" cols="50" minlength="10" maxlength="500"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="grupo-opinion">
+                    <legend>Opinión</legend>
+                    
+                    <div class="campo-formulario">
+                        <p>¿Qué opinas de la IA?</p>
+                        <label><input type="radio" id="muyPositiva" name="opinionIA" value="Muy positiva"> Muy positiva</label>
+                        <label><input type="radio" id="neutral" name="opinionIA" value="Neutra"> Neutra</label>
+                        <label><input type="radio" id="negativa" name="opinionIA" value="Negativa"> Negativa</label>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <p>¿Qué áreas crees que mejorará?</p>
+                        <label><input type="checkbox" id="medicina" name="areas" value="medicina"> Medicina</label>
+                        <label><input type="checkbox" id="educacion" name="areas" value="educacion"> Educación</label>
+                        <label><input type="checkbox" id="transporte" name="areas" value="transporte"> Transporte</label>
+                    </div>
+                    
+                    <div class="campo-formulario">
+                        <label for="tecnología">¿Cuál tecnología te interesa?</label>
+                        <select id="tecnología" name="tecnología">
+                            <option value="ML">Machine Learning</option>
+                            <option value="DL">Deep Learning</option>
+                            <option value="VA">Visión Artificial</option>
+                            <option value="PLN">Procesamiento del Lenguaje Natural</option>
+                        </select>
+                    </div>
+                    
+                    <div class="campo-formulario">
+                        <label for="empresas">Empresas de IA (selección múltiple):</label>
+                        <select id="empresas" name="empresas" multiple size="7">
+                            <optgroup label="Grandes tecnológicas">
+                                <option value="openai">OpenAI</option>
+                                <option value="google">Google DeepMind</option>
+                                <option value="meta">Meta AI</option>
+                            </optgroup>
+                            <optgroup label="Startups">                            
+                                <option value="anthropic">Anthropic</option>
+                                <option value="stability">Stability AI</option>
+                                <option value="midjourney">Midjourney</option>
+                                <option value="cohere">Cohere</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <div class="botones-formulario">
+                    <input type="submit" value="Enviar" class="enviar">
+                    <input type="reset" value="Resetear" class="resetear">
+                </div>   
+            </form>
+        </section>
+    </main>
     
+    <footer>
+        <p><small>&copy; 2026 Germán García Abril. Todos los derechos reservados.</small></p>
+        <div class="redes-sociales">
+            <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </footer>
+
 </body>
 </html>
